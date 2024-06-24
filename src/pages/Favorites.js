@@ -3,7 +3,7 @@ import Results from "../components/Results";
 import { Outlet, useOutletContext } from "react-router-dom";
 
 function Favorites() {
-    const [favorites, setReload] = useOutletContext();
+    const favorites = useOutletContext();
     // console.log(favorites);
 
     return (

@@ -21,7 +21,7 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <Outlet context={[favorites, setReload]}/>
+      <Outlet context={favorites}/>
     </>
   );
 }

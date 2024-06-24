@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 function Form() {
     const [formData, setFormData] = useState({
@@ -17,6 +18,9 @@ function Form() {
         Plot: "",
         totalSeasons: "",
     })
+
+    const context = useOutletContext();
+    console.log(context);
 
     function handleSubmit(event) {
         event.preventDefault();

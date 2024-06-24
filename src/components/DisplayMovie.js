@@ -2,10 +2,14 @@ import { useOutletContext, useParams } from "react-router-dom";
 
 function DisplayMovie() {
     const params = useParams();
-    const [favorites, setReload] = useOutletContext();
+    const favorites = useOutletContext();
 
     const movie = favorites.find(favorite => favorite.id === params.id )
     
+    if(!movie){
+        return <h1>Loading...</h1>;
+    };
+
     return (
         <div>
             <h2>Title: {movie.Title}</h2>
