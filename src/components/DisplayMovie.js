@@ -2,7 +2,7 @@ import { useOutletContext, useParams } from "react-router-dom";
 
 function DisplayMovie() {
     const params = useParams();
-    const {favorites, addMovie} = useOutletContext();
+    const favorites = useOutletContext();
 
     const movie = favorites.find(favorite => favorite.id === params.id )
     

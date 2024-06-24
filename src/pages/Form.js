@@ -19,7 +19,7 @@ function Form() {
         totalSeasons: "",
     })
 
-    const {favorites, addMovie, newMovieDisplay} = useOutletContext();
+    const {favorites, addMovie} = useOutletContext();
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -46,7 +46,6 @@ function Form() {
             })
         })
         addMovie(formData);
-        newMovieDisplay(formData);
         setFormData({
             Title: "",
             Year: "",
