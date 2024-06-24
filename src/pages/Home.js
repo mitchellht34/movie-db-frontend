@@ -1,7 +1,7 @@
 function Home() {
     return (
         <main>
-            <h1>Welcome to our Movie Database!</h1>
+            <h1>This is my Home Page</h1>
         </main>
     );
 }
