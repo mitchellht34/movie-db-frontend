@@ -5,28 +5,27 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   const [favorites, setFavorites] = useState([]);
-  const [reload, setReload] = useState(false);
 
   useEffect(() => {
       fetch(`http://localhost:4000/movies`)
         .then((response) => response.json())
         .then((data) => {
           setFavorites(data);
-          // console.log(favorites);
+          console.log(favorites);
         })
-    }, [reload])
+    }, [])
 
-  function handleReload(){
-    console.log(favorites);
-    setReload(!reload);
-  }
+    function addMovie(newMovie){
+      setFavorites([...favorites, newMovie]);
+      // console.log(newMovie);
+    }
 
   return (
     <>
       <header>
         <NavBar />
       </header>
-      <Outlet context={{favorites, reload, handleReload}}/>
+      <Outlet context={{favorites, addMovie}}/>
     </>
   );
 }
