@@ -45,7 +45,8 @@ function Form() {
                 "totalSeasons": formData.totalSeasons,
             })
         })
-        addMovie(formData);
+        .then(r => r.json())
+        .then(data => addMovie(data));
         setFormData({
             Title: "",
             Year: "",
