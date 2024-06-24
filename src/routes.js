@@ -1,6 +1,8 @@
 import App from "./App";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
+import Favorites from "./pages/Favorites";
+import Form from "./pages/Form";
 import ErrorPage from "./pages/ErrorPage";
 
 const routes = [
@@ -16,6 +18,14 @@ const routes = [
             {
                 path: "/search",
                 element: <Search />
+            },
+            {
+                path: "/favorites",
+                element: <Favorites />
+            },
+            {
+                path: "/new-entry",
+                element: <Form />
             }
         ]
     }
