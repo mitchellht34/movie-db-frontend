@@ -19,8 +19,7 @@ function Form() {
         totalSeasons: "",
     })
 
-    const context = useOutletContext();
-    console.log(context);
+    const {favorites, reload, handleReload} = useOutletContext();
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -61,7 +60,8 @@ function Form() {
             Awards: "",
             Plot: "",
             totalSeasons: "",
-        })
+        });
+        handleReload();
     }
 
     function handleChange(event){

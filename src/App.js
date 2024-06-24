@@ -16,12 +16,17 @@ function App() {
         })
     }, [reload])
 
+  function handleReload(){
+    console.log(favorites);
+    setReload(!reload);
+  }
+
   return (
     <>
       <header>
         <NavBar />
       </header>
-      <Outlet context={favorites}/>
+      <Outlet context={{favorites, reload, handleReload}}/>
     </>
   );
 }
