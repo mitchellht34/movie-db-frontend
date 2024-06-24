@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Favorites from "./pages/Favorites";
 import Form from "./pages/Form";
+import DisplayMovie from "./components/DisplayMovie"
 import ErrorPage from "./pages/ErrorPage";
 
 const routes = [
@@ -21,7 +22,13 @@ const routes = [
             },
             {
                 path: "/favorites",
-                element: <Favorites />
+                element: <Favorites />,
+                children: [
+                    {
+                        path: "/favorites/:id",
+                        element: <DisplayMovie />
+                    }
+                ]
             },
             {
                 path: "/new-entry",
